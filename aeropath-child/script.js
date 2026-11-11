@@ -41,3 +41,17 @@ document.addEventListener("DOMContentLoaded", function () {
         form.reset();
     });
 });
+
+// Automatically select the program when a visitor clicks Request Information.
+document.addEventListener("DOMContentLoaded", function () {
+    const programDropdown = document.getElementById("program");
+    const programLinks = document.querySelectorAll("[data-program]");
+
+    programLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+            if (programDropdown) {
+                programDropdown.value = link.getAttribute("data-program");
+            }
+        });
+    });
+});
