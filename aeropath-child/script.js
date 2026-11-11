@@ -1,10 +1,26 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("inquiry-form");
     const formMessage = document.getElementById("form-message");
 
     if (!form || !formMessage) {
         return;
+    }
+
+    // Capture UTM parameters from the URL.
+    const params = new URLSearchParams(window.location.search);
+    const utmSource = params.get("utm_source") || "";
+    const utmCampaign = params.get("utm_campaign") || "";
+
+    // Populate hidden form fields.
+    const utmSourceField = document.getElementById("utm-source");
+    const utmCampaignField = document.getElementById("utm-campaign");
+
+    if (utmSourceField) {
+        utmSourceField.value = utmSource;
+    }
+
+    if (utmCampaignField) {
+        utmCampaignField.value = utmCampaign;
     }
 
     form.addEventListener("submit", function (event) {
@@ -30,19 +46,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
         formMessage.style.color = "#176b52";
 
-        // Notify Google Tag Manager of a successful demo inquiry.
+        // Track successful demo inquiry and campaign attribution.
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
             event: "demo_inquiry_success",
             form_name: "AeroPath Training Inquiry",
-            program_selected: program
+            program_selected: program,
+            utm_source: utmSource,
+            utm_campaign: utmCampaign
         });
 
         form.reset();
     });
 });
 
-// Automatically select the program when a visitor clicks Request Information.
+// Automatically select the program when Request Information is clicked.
 document.addEventListener("DOMContentLoaded", function () {
     const programDropdown = document.getElementById("program");
     const programLinks = document.querySelectorAll("[data-program]");
