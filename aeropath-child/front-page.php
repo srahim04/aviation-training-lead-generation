@@ -18,7 +18,7 @@ get_header();
             <a href="#programs" class="primary-button">
                 Explore Programs
             </a>
-            
+
             <a href="#contact" class="secondary-button">
                 Request Information
             </a>
@@ -31,7 +31,6 @@ get_header();
             >
         </div>
     </section>
-
 
     <section id="programs" class="programs-section">
         <div class="section-heading">
@@ -46,7 +45,6 @@ get_header();
         <div class="program-grid">
 
             <article class="program-card">
-
                 <img
                     class="program-image"
                     src="<?php echo esc_url(get_stylesheet_directory_uri() . '/images/pilot-training.jpg'); ?>"
@@ -63,7 +61,6 @@ get_header();
             </article>
 
             <article class="program-card">
-
                 <img
                     class="program-image"
                     src="<?php echo esc_url(get_stylesheet_directory_uri() . '/images/instrument-training.jpg'); ?>"
@@ -80,7 +77,6 @@ get_header();
             </article>
 
             <article class="program-card">
-
                 <img
                     class="program-image"
                     src="<?php echo esc_url(get_stylesheet_directory_uri() . '/images/aviation-safety.jpg'); ?>"
@@ -97,7 +93,6 @@ get_header();
             </article>
 
             <article class="program-card">
-
                 <img
                     class="program-image"
                     src="<?php echo esc_url(get_stylesheet_directory_uri() . '/images/airport-operations.jpg'); ?>"
@@ -140,6 +135,10 @@ get_header();
         </div>
 
         <form id="inquiry-form" class="inquiry-form">
+
+            <!-- Hidden fields for campaign attribution -->
+            <input type="hidden" id="utm-source" name="utm_source">
+            <input type="hidden" id="utm-campaign" name="utm_campaign">
 
             <label for="full-name">Full Name</label>
             <input
@@ -191,8 +190,3 @@ get_header();
     </section>
 
 </main>
-
-<?php
-// Load the WordPress footer.
-get_footer();
-?>
