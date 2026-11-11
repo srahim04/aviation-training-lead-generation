@@ -191,6 +191,7 @@ a {
     margin: 18px 0 8px;
 }
 
+
 .aeropath-home .inquiry-form input,
 .aeropath-home .inquiry-form select,
 .aeropath-home .inquiry-form textarea {
@@ -200,6 +201,13 @@ a {
     border-radius: 5px;
     font-family: inherit;
     font-size: 15px;
+    box-sizing: border-box;
+}
+
+.aeropath-home .inquiry-form select {
+    min-height: 48px;
+    padding: 10px 36px 10px 12px;
+    line-height: 1.4;
 }
 
 .aeropath-home .inquiry-form input:focus,
@@ -208,6 +216,7 @@ a {
     outline: 2px solid #2877a8;
     outline-offset: 2px;
 }
+
 
 .aeropath-home .inquiry-form button {
     margin-top: 24px;
