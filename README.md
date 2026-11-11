@@ -42,7 +42,7 @@ The website was tested locally over HTTP. The Best Practices score was affected 
 
 - [WordPress child theme](aeropath-child/) — Custom PHP, CSS, and JavaScript files
 - [Website screenshots](screenshots/AeroPath%20Screenshots/) — Homepage, training programs, inquiry form, and mobile layout
-- [Lighthouse Report](screenshots/AeroPath%20Screenshots/06-lighthouse-mobile.pdf) - Mobile Testing Results
+- [Website screenshots](screenshots/AeroPath%20Screenshots/) - Mobile Testing Results
 
 ## How to Run the Website
 
