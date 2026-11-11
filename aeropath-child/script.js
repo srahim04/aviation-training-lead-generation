@@ -30,6 +30,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         formMessage.style.color = "#176b52";
 
+        // Notify Google Tag Manager of a successful demo inquiry.
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: "demo_inquiry_success",
+            form_name: "AeroPath Training Inquiry",
+            program_selected: program
+        });
+
         form.reset();
     });
 });
