@@ -7,7 +7,7 @@ Template: astra
 Version: 1.0
 */
 
-/* General website styling */
+/* General styling */
 body {
     font-family: Arial, sans-serif;
     color: #243247;
@@ -22,19 +22,12 @@ a {
     text-decoration: none;
 }
 
-/* Homepage layout */
+html {
+    scroll-behavior: smooth;
+}
+
 .aeropath-home {
     font-family: Arial, sans-serif;
-}
-
-.aeropath-home .hero {
-    background: linear-gradient(120deg, #102b4e, #205a83);
-    color: white;
-    padding: 110px 8%;
-}
-
-.aeropath-home .hero-content {
-    max-width: 720px;
 }
 
 .aeropath-home .eyebrow {
@@ -43,6 +36,27 @@ a {
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #2877a8;
+}
+
+/* Hero section */
+.aeropath-home .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 110px 8%;
+    background: linear-gradient(
+        120deg,
+        #102b49 0%,
+        #19476e 55%,
+        #2877a8 100%
+    );
+    color: white;
+}
+
+.aeropath-home .hero-content {
+    flex: 1;
+    max-width: 600px;
 }
 
 .aeropath-home .hero .eyebrow {
@@ -62,6 +76,20 @@ a {
     margin-bottom: 30px;
 }
 
+.aeropath-home .hero-image {
+    flex: 1;
+    max-width: 480px;
+}
+
+.aeropath-home .hero-image img {
+    display: block;
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Buttons and links */
 .aeropath-home .primary-button,
 .aeropath-home .secondary-button {
     display: inline-block;
@@ -93,6 +121,18 @@ a {
 .aeropath-home .secondary-button:hover {
     background: white;
     color: #102b4e;
+}
+
+.aeropath-home a,
+.aeropath-home button {
+    transition: background-color 0.2s ease,
+                box-shadow 0.2s ease,
+                transform 0.2s ease;
+}
+
+.aeropath-home .hero a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Training programs */
@@ -129,9 +169,25 @@ a {
 .aeropath-home .program-card {
     background: white;
     padding: 30px;
-    border: 1px solid #e0e7ef;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e1e8ef;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(16, 43, 73, 0.08);
+    transition: box-shadow 0.2s ease,
+                transform 0.2s ease;
+}
+
+.aeropath-home .program-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(16, 43, 73, 0.14);
+}
+
+.aeropath-home .program-image {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 .aeropath-home .program-card h3 {
@@ -181,7 +237,7 @@ a {
     margin: auto;
     padding: 35px;
     background: white;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
@@ -191,14 +247,13 @@ a {
     margin: 18px 0 8px;
 }
 
-
 .aeropath-home .inquiry-form input,
 .aeropath-home .inquiry-form select,
 .aeropath-home .inquiry-form textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #b8c5d1;
-    border-radius: 5px;
+    border-radius: 7px;
     font-family: inherit;
     font-size: 15px;
     box-sizing: border-box;
@@ -217,7 +272,6 @@ a {
     outline-offset: 2px;
 }
 
-
 .aeropath-home .inquiry-form button {
     margin-top: 24px;
 }
@@ -230,6 +284,9 @@ a {
 /* Mobile and tablet layouts */
 @media (max-width: 768px) {
     .aeropath-home .hero {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px;
         padding: 75px 6%;
     }
 
@@ -237,8 +294,24 @@ a {
         font-size: 36px;
     }
 
+    .aeropath-home .hero-image {
+        max-width: 100%;
+    }
+
+    .aeropath-home .hero-image img {
+        height: 230px;
+    }
+
     .aeropath-home .program-grid {
         grid-template-columns: 1fr;
+    }
+
+    .aeropath-home .program-card {
+        margin-bottom: 16px;
+    }
+
+    .aeropath-home .program-image {
+        height: 170px;
     }
 
     .aeropath-home .programs-section,
@@ -257,69 +330,7 @@ a {
     }
 }
 
-
-/* =====================================
-   AeroPath Training - Visual Enhancements
-   ===================================== */
-
-/* Smooth navigation between page sections */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Improve the appearance of the hero section */
-
-.aeropath-home .hero {
-    background: linear-gradient(
-        120deg,
-        #102b49 0%,
-        #19476e 55%,
-        #2877a8 100%
-    );
-}
-
-
-/* Improve the appearance of buttons */
-.aeropath-home a,
-.aeropath-home button {
-    transition: background-color 0.2s ease,
-                box-shadow 0.2s ease,
-                transform 0.2s ease;
-}
-
-/* Add subtle interaction to buttons */
-.aeropath-home .hero a:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Style training program cards */
-.aeropath-home .program-card {
-    border: 1px solid #e1e8ef;
-    border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(16, 43, 73, 0.08);
-    transition: box-shadow 0.2s ease,
-                transform 0.2s ease;
-}
-
-/* Lift program cards slightly on hover */
-.aeropath-home .program-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 24px rgba(16, 43, 73, 0.14);
-}
-
-/* Improve inquiry form styling */
-.aeropath-home .inquiry-form {
-    border-radius: 12px;
-}
-
-.aeropath-home .inquiry-form input,
-.aeropath-home .inquiry-form select,
-.aeropath-home .inquiry-form textarea {
-    border-radius: 7px;
-}
-
-/* Keep interactions accessible */
+/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
@@ -329,71 +340,5 @@ html {
     .aeropath-home button,
     .aeropath-home .program-card {
         transition: none;
-    }
-}
-
-/* Adjust spacing for mobile devices */
-@media (max-width: 768px) {
-
-    .aeropath-home .program-card {
-        margin-bottom: 16px;
-    }
-}
-
- 
-/* Hero layout with image */
-.aeropath-home .hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.aeropath-home .hero-content {
-    flex: 1;
-    max-width: 600px;
-}
-
-.aeropath-home .hero-image {
-    flex: 1;
-    max-width: 480px;
-}
-
-.aeropath-home .hero-image img {
-    width: 100%;
-    height: 330px;
-    object-fit: cover;
-    border-radius: 12px;
-    display: block;
-}
-
-/* Training program images */
-.aeropath-home .program-image {
-    width: 100%;
-    height: 190px;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-    margin-bottom: 20px;
-}
-
-/* Mobile layout */
-@media (max-width: 768px) {
-    .aeropath-home .hero {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 30px;
-    }
-
-    .aeropath-home .hero-image {
-        max-width: 100%;
-    }
-
-    .aeropath-home .hero-image img {
-        height: 230px;
-    }
-
-    .aeropath-home .program-image {
-        height: 170px;
     }
 }
