@@ -1,57 +1,30 @@
-# Aviation Training Digital Marketing & Lead Generation Platform
 
-## About the Project
+## Digital Marketing & Analytics
 
-I built AeroPath Training as a practice WordPress website to explore how web development and digital marketing can work together for an aviation training organization.
+I created a simulated Google Ads Search campaign for AeroPath Training to explore how digital advertising could support aviation training inquiries.
 
-I wanted to create a website where visitors could easily explore training programs, find information, and submit an inquiry. I also focused on making the website responsive and easy to navigate.
+The campaign plan includes:
+- Keyword targeting across aviation training programs
+- Search ad headlines and descriptions
+- Geographic targeting and a proposed advertising budget
+- Conversion goals for program exploration and demo inquiries
 
-AeroPath Training is a fictional organization created for this project.
+[View Google Ads Campaign & Tracking Plan](docs/google-ads-campaign.md)
 
-## What I Built
+### Google Tag Manager Implementation
 
-- A custom WordPress child theme using Astra
-- A homepage featuring four aviation training programs
-- Responsive layouts using HTML, CSS, and media queries
-- Desktop and mobile navigation menus
-- An interactive inquiry form using JavaScript
-- Basic form validation and a confirmation message
-- An SEO meta description for the homepage
-- Mobile performance and accessibility testing using Google Lighthouse
+I installed Google Tag Manager on the local WordPress website and configured three triggers:
 
-The inquiry form is a demonstration feature. It validates information in the browser but does not send or store submissions.
+- Explore Programs Click
+- Request Information Click
+- Demo Inquiry Success
 
-## Tools Used
+I used Tag Assistant to verify both button clicks and the custom `demo_inquiry_success` event triggered after successful form validation.
 
-WordPress, LocalWP, PHP, HTML5, CSS3, JavaScript, Astra, Google Chrome DevTools, Google Lighthouse, GitHub
+### Google Analytics 4 Tracking Plan
 
-## Lighthouse Results
+I developed a proposed GA4 measurement plan covering program exploration, inquiry button clicks, and successful demo form submissions.
 
-I tested the website using Google Lighthouse in mobile mode.
+GA4 event reporting was not deployed because the website runs locally without a connected GA4 web data stream.
 
-| Category | Score |
-|---|---|
-| Performance | 99 |
-| Accessibility | 93 |
-| Best Practices | 78 |
-| SEO | 100 |
-
-The website was tested locally over HTTP. The Best Practices score was affected by HTTPS-related checks in the local development environment.
-
-## Project Files
-
-- [WordPress child theme](aeropath-child/) — Custom PHP, CSS, and JavaScript files
-- [Website screenshots](screenshots/AeroPath%20Screenshots/) — Homepage, training programs, inquiry form, and mobile layout
-- [Lighthouse Report](screenshots/AeroPath%20Screenshots/) - Mobile Testing Results
-
-## How to Run the Website
-
-1. Install WordPress locally using LocalWP.
-2. Install the free Astra theme.
-3. Copy the `aeropath-child` folder into `wp-content/themes/`.
-4. Activate AeroPath Child under Appearance → Themes.
-5. Create a page called Home and set it as the static homepage under Settings → Reading.
-6. Create a WordPress navigation menu with links to the homepage sections.
-7. Open the website to view the training programs and test the demo inquiry form.
-
-This project helped me practice WordPress customization, responsive design, JavaScript interactions, SEO, and website testing.
+This is a demonstration project. No paid advertising was launched, and no real leads or conversions were collected.
