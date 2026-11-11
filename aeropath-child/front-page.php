@@ -47,74 +47,70 @@ get_header();
 
             <article class="program-card">
 
-<img
-    class="program-image"
-    src="<?php echo esc_url(get_stylesheet_directory_uri() . '/images/pilot-training.jpg'); ?>"
-    alt="Pilot training inside an aircraft cockpit"
-    loading="lazy"
->
-
+                <img
+                    class="program-image"
+                    src="<?php echo esc_url(get_stylesheet_directory_uri() . '/images/pilot-training.jpg'); ?>"
+                    alt="Pilot training inside an aircraft cockpit"
+                    loading="lazy"
+                >
                 <span class="program-category">FLIGHT TRAINING</span>
                 <h3>Private Pilot Training</h3>
                 <p>
                     Learn the fundamentals of flight,
                     aircraft operations, and aviation safety.
                 </p>
-                <a href="#contact">Learn More →</a>
+                <a href="#contact" data-program="private-pilot">Request Information →</a>
             </article>
 
             <article class="program-card">
 
-<img
-    class="program-image"
-    src="<?php echo esc_url(get_stylesheet_directory_uri() . '/images/instrument-training.jpg'); ?>"
-    alt="Aircraft cockpit instruments and navigation controls"
-    loading="lazy"
->
-
+                <img
+                    class="program-image"
+                    src="<?php echo esc_url(get_stylesheet_directory_uri() . '/images/instrument-training.jpg'); ?>"
+                    alt="Aircraft cockpit instruments and navigation controls"
+                    loading="lazy"
+                >
                 <span class="program-category">FLIGHT TRAINING</span>
                 <h3>Instrument Rating Preparation</h3>
                 <p>
                     Explore instrument procedures,
                     navigation, and flight planning.
                 </p>
-                <a href="#contact">Learn More →</a>
+                <a href="#contact" data-program="instrument">Request Information →</a>
             </article>
 
             <article class="program-card">
 
-<img
-    class="program-image"
-    src="<?php echo esc_url(get_stylesheet_directory_uri() . '/images/aviation-safety.jpg'); ?>"
-    alt="Aircraft safety inspection"
-    loading="lazy"
->
-
+                <img
+                    class="program-image"
+                    src="<?php echo esc_url(get_stylesheet_directory_uri() . '/images/aviation-safety.jpg'); ?>"
+                    alt="Aircraft safety inspection"
+                    loading="lazy"
+                >
                 <span class="program-category">AVIATION SAFETY</span>
                 <h3>Aviation Safety Fundamentals</h3>
                 <p>
                     Understand safety procedures,
                     risk management, and aviation regulations.
                 </p>
-                <a href="#contact">Learn More →</a>
+                <a href="#contact" data-program="safety">Request Information →</a>
             </article>
 
             <article class="program-card">
 
-<img
-    class="program-image"
-    src="<?php echo esc_url(get_stylesheet_directory_uri() . '/images/airport-operations.jpg'); ?>"
-    alt="Airport ground operations near an aircraft"
-    loading="lazy"
->
-
+                <img
+                    class="program-image"
+                    src="<?php echo esc_url(get_stylesheet_directory_uri() . '/images/airport-operations.jpg'); ?>"
+                    alt="Airport ground operations near an aircraft"
+                    loading="lazy"
+                >
                 <span class="program-category">AIRPORT OPERATIONS</span>
                 <h3>Airport Operations Essentials</h3>
                 <p>
                     Learn about airport operations,
                     ground services, and daily coordination.
                 </p>
-                <a href="#contact">Learn More →</a>
+                <a href="#contact" data-program="airport">Request Information →</a>
             </article>
 
         </div>
