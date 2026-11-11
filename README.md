@@ -28,3 +28,16 @@ I developed a proposed GA4 measurement plan covering program exploration, inquir
 GA4 event reporting was not deployed because the website runs locally without a connected GA4 web data stream.
 
 This is a demonstration project. No paid advertising was launched, and no real leads or conversions were collected.
+
+### Website Performance & SEO Testing
+
+I tested the AeroPath Training website using Google Lighthouse with mobile device emulation.
+
+Results:
+- Performance: 99/100
+- Accessibility: 93/100
+- Best Practices: 78/100
+- SEO: 100/100
+
+The audit was conducted in a local WordPress environment. The Best Practices score reflects HTTPS-related findings associated with local development.
+
