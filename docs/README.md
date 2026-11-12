@@ -1,10 +1,11 @@
 # Project Documentation
 
-This folder contains the content planning for my AeroPath Training WordPress website.
+This folder contains supporting documentation for my AeroPath Training WordPress website.
 
-## Website Content
+## Documents
 
-- **[website-content.md](website-content.md)** — The homepage text, training program descriptions, and inquiry section content I planned for the website. I focused on making the information easy to follow and helping visitors find programs they're interested in.
+- **[Website Content](website-content.md)** — The homepage text, training program information, and inquiry section content I planned for the website.
+- **[Digital Marketing & Website Analytics](marketing-analytics.md)** — How I designed the website to support inquiries, configured Google Tag Manager, and tested website interaction tracking.
 
 ## Additional Project Resources
 
