@@ -6,12 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    // Capture UTM parameters from the URL.
     const params = new URLSearchParams(window.location.search);
     const utmSource = params.get("utm_source") || "";
     const utmCampaign = params.get("utm_campaign") || "";
 
-    // Populate hidden form fields.
     const utmSourceField = document.getElementById("utm-source");
     const utmCampaignField = document.getElementById("utm-campaign");
 
