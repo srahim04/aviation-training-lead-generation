@@ -6,51 +6,46 @@ I recorded a walkthrough of the AeroPath Training website to show how the differ
 
 I also discuss the performance improvements and Google Tag Manager setup I worked on. Screenshots of the website, tracking tests, and Lighthouse results are available in the `screenshots/` folder.
 
-## Digital Marketing & Analytics
+## Lead Generation & Website Analytics
 
-I created a simulated Google Ads Search campaign for AeroPath Training to explore how search advertising could help people discover aviation training programs and encourage them to request more information.
+I wanted AeroPath Training to do more than display aviation training programs. I designed the website to help visitors explore their options, find programs they're interested in, and easily request more information.
 
-The campaign plan includes:
+I connected the training program buttons to an interactive inquiry form with JavaScript validation and a confirmation message after a successful demo submission.
 
-- Aviation training keywords and search targeting
-- Sample Google Search ad headlines and descriptions
-- Geographic targeting and a proposed advertising budget
-- Conversion goals for program exploration and training inquiries
-
-[View Google Ads Campaign & Tracking Plan](docs/google-ads-campaign.md)
+I also integrated Google Tag Manager and configured tracking to explore how these interactions could be measured.
 
 ### Google Tag Manager Implementation
 
-I added Google Tag Manager to the WordPress website to test how visitor interactions could be tracked.
+I configured three triggers to track different visitor interactions:
 
-I configured the following triggers:
-
-- Explore Programs Click
-- Request Information Click
-- Demo Inquiry Success
+- **Explore Programs Click:** When someone clicks the Explore Programs button
+- **Request Information Click:** When someone clicks Request Information
+- **Demo Inquiry Success:** When someone successfully completes the demo inquiry form
 
 I also set up two tags:
 
-- **Google Analytics:** Configured to fire when the page loads
-- **GA4 – Demo Inquiry Success:** Configured to fire when someone successfully submits the demo inquiry form
+- **Google Analytics:** Configured to fire when the website loads
+- **GA4 – Demo Inquiry Success:** Configured to fire after a successful demo inquiry
 
-I tested the setup using Google Tag Manager's Preview mode and Tag Assistant. Both tags fired successfully during testing, including the inquiry success tag after a valid form submission.
+For the inquiry form, I used JavaScript to push a custom `demo_inquiry_success` event to the `dataLayer` after the form passes validation.
 
-The `demo_inquiry_success` event was used to distinguish successful form submissions from visitors simply clicking the inquiry button.
+I tested the setup using Google Tag Manager's Preview mode and Tag Assistant. Both tags fired successfully, including the inquiry success tag after a valid demo submission.
 
-Screenshots of the tags, triggers, and successful testing are included in the `screenshots/` folder.
+Screenshots of the tracking setup and testing are available in the `screenshots/` folder.
 
 ### Google Analytics 4
 
-I connected the Google Analytics tag through Google Tag Manager and developed a measurement plan for tracking how visitors interact with the website.
-
-The plan focuses on:
+I configured Google Analytics 4 through Google Tag Manager and created a measurement plan focused on three interactions:
 
 - Visitors exploring aviation training programs
 - Visitors clicking Request Information
-- Successful demo inquiry submissions
+- Visitors successfully completing the demo inquiry form
 
-This project uses a local WordPress website and a demonstration form. No real customer information was collected, and no paid advertising campaigns were launched.
+Although the tags fired successfully in Tag Assistant, I didn't independently confirm the events appearing in GA4 Realtime reporting.
+
+This helped me explore how website analytics could be used to understand visitor interest and support lead-generation efforts.
+
+The inquiry form is a demonstration and doesn't send or store real customer information.
 
 ### Website Performance & SEO Testing
 
