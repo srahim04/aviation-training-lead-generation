@@ -1,6 +1,5 @@
 
 <?php
-// Load the Astra stylesheet and our custom styles.
 function aeropath_load_styles() {
     wp_enqueue_style(
         'astra-parent',
@@ -17,7 +16,6 @@ function aeropath_load_styles() {
 
 add_action('wp_enqueue_scripts', 'aeropath_load_styles');
 
-// Load the JavaScript used by the inquiry form.
 function aeropath_load_scripts() {
     wp_enqueue_script(
         'aeropath-script',
@@ -30,8 +28,6 @@ function aeropath_load_scripts() {
 
 add_action('wp_enqueue_scripts', 'aeropath_load_scripts');
 
-
-// Add a description for the homepage.
 function aeropath_meta_description() {
     if (is_front_page()) {
         echo '<meta name="description" content="Explore aviation training programs, including pilot training, aviation safety, and airport operations at AeroPath Training.">';
@@ -40,8 +36,6 @@ function aeropath_meta_description() {
 
 add_action('wp_head', 'aeropath_meta_description');
 
-
-/* Add Google Tag Manager to the website */
 function aeropath_google_tag_manager() {
     ?>
     <script>
@@ -60,8 +54,6 @@ function aeropath_google_tag_manager() {
 }
 add_action('wp_head', 'aeropath_google_tag_manager');
 
-
-/* Google Tag Manager fallback */
 function aeropath_gtm_body() {
     ?>
     <noscript>
