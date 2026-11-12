@@ -2,64 +2,64 @@
 
 [**Watch the AeroPath Training Website Demo**](https://github.com/srahim04/aviation-training-lead-generation/releases/tag/v1.0)
 
-I recorded a walkthrough of the AeroPath Training website to show how the different features work, including the training programs, sticky navigation, inquiry form, and responsive mobile layout.
+I recorded a walkthrough of AeroPath Training showing the training programs, navigation, inquiry form, and mobile layout. I also go over the changes I made to improve the website's performance and how I set up Google Tag Manager.
 
-I also discuss the performance improvements and Google Tag Manager setup I worked on. Screenshots of the website, tracking tests, and Lighthouse results are available in the `screenshots/` folder.
+Screenshots of the website, tracking tests, and Lighthouse results are in the `screenshots/` folder.
 
 ## Lead Generation & Website Analytics
 
-I wanted AeroPath Training to do more than display aviation training programs. I designed the website to help visitors explore their options, find programs they're interested in, and easily request more information.
+When building AeroPath Training, I wanted visitors to be able to do more than just browse the training programs. I added ways for them to explore different courses and request more information if something interested them.
 
-I connected the training program buttons to an interactive inquiry form with JavaScript validation and a confirmation message after a successful demo submission.
+I used JavaScript to connect the program buttons to an inquiry form, check that the required fields were filled out, and display a confirmation message after a successful submission.
 
-I also integrated Google Tag Manager and configured tracking to explore how these interactions could be measured.
+I also set up Google Tag Manager to track how visitors interact with different parts of the website.
 
-### Google Tag Manager Implementation
+### Google Tag Manager
 
-I configured three triggers to track different visitor interactions:
+I created three triggers to track:
 
 - **Explore Programs Click:** When someone clicks the Explore Programs button
-- **Request Information Click:** When someone clicks Request Information
-- **Demo Inquiry Success:** When someone successfully completes the demo inquiry form
+- **Request Information Click:** When someone clicks the Request Information button
+- **Demo Inquiry Success:** When someone completes the inquiry form successfully
 
-I also set up two tags:
+I also configured two tags:
 
-- **Google Analytics:** Configured to fire when the website loads
-- **GA4 – Demo Inquiry Success:** Configured to fire after a successful demo inquiry
+- **Google Analytics:** Fires when the website loads
+- **GA4 – Demo Inquiry Success:** Fires after a successful form submission
 
-For the inquiry form, I used JavaScript to push a custom `demo_inquiry_success` event to the `dataLayer` after the form passes validation.
+For the inquiry form, I added JavaScript that pushes a `demo_inquiry_success` event to the `dataLayer` once the form passes validation.
 
-I tested the setup using Google Tag Manager's Preview mode and Tag Assistant. Both tags fired successfully, including the inquiry success tag after a valid demo submission.
+I used Google Tag Manager's Preview mode and Tag Assistant to check that everything was working. Both tags fired during testing, including the inquiry success tag after submitting a valid form.
 
-Screenshots of the tracking setup and testing are available in the `screenshots/` folder.
+I included screenshots of the triggers, tags, and test results in the `screenshots/` folder.
 
 ### Google Analytics 4
 
-I configured Google Analytics 4 through Google Tag Manager and created a measurement plan focused on three interactions:
+I set up Google Analytics 4 through Google Tag Manager and outlined three interactions I wanted to measure:
 
-- Visitors exploring aviation training programs
-- Visitors clicking Request Information
-- Visitors successfully completing the demo inquiry form
+- How visitors explore the training programs
+- How often they click Request Information
+- When they successfully submit the demo inquiry form
 
-Although the tags fired successfully in Tag Assistant, I didn't independently confirm the events appearing in GA4 Realtime reporting.
+The tags fired correctly in Tag Assistant, although I wasn't able to independently verify the events in GA4 Realtime.
 
-This helped me explore how website analytics could be used to understand visitor interest and support lead-generation efforts.
+This part of the project helped me get more familiar with setting up website tracking and understanding what information would be useful when reviewing how visitors use a site.
 
-The inquiry form is a demonstration and doesn't send or store real customer information.
+The inquiry form is only a demo, so it doesn't send or store actual customer information.
 
-### Website Performance & SEO Testing
+### Website Performance & SEO
 
-I used Google Lighthouse to test the website's performance, accessibility, best practices, and SEO using mobile device emulation.
+I used Google Lighthouse to check the website's performance, accessibility, best practices, and SEO on mobile.
 
 **Lighthouse Results:**
 
-- **Performance: 98/100**
-- **Accessibility: 93/100**
-- **Best Practices: 78/100**
-- **SEO: 100/100**
+- **Performance:** 98/100
+- **Accessibility:** 93/100
+- **Best Practices:** 78/100
+- **SEO:** 100/100
 
-I also optimized the homepage airplane image by converting it to WebP, reducing its file size to approximately 54 KB while keeping the image quality suitable for the website.
+One of the changes I made was converting the homepage airplane image to WebP. This brought the file size down to around 54 KB without noticeably affecting how it looked on the website.
 
-The Lighthouse audit was conducted in a local WordPress environment. HTTPS-related findings associated with local development contributed to the Best Practices score.
+I ran the Lighthouse test on my local WordPress site. Some HTTPS-related issues from the local setup contributed to the lower Best Practices score.
 
-The full Lighthouse report and supporting screenshots are available in the `screenshots/` folder.
+The full Lighthouse report and screenshots are available in the `screenshots/` folder.
