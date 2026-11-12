@@ -1,13 +1,11 @@
-
 # Project Documentation
 
-This folder contains supporting documentation for the AeroPath Training WordPress website.
+This folder contains the content planning for my AeroPath Training WordPress website.
 
-## Files
+## Website Content
 
-- **google-ads-campaign.md** — Simulated Google Ads Search campaign, including keyword targeting, ad copy, conversion goals, and a GA4/GTM tracking plan.
-- **website-content.md** — Website content planning for the homepage, aviation training programs, and inquiry section.
+- **[website-content.md](website-content.md)** — The homepage text, training program descriptions, and inquiry section content I planned for the website. I focused on making the information easy to follow and helping visitors find programs they're interested in.
 
 ## Additional Project Resources
 
-The main repository contains the WordPress source code, website screenshots, Google Tag Manager testing evidence, and Lighthouse performance audit.
+The main repository includes the WordPress source code, website screenshots, Google Tag Manager testing, Lighthouse results, and a video walkthrough of the finished website.
