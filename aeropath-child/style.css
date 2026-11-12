@@ -4,181 +4,329 @@ Theme Name: AeroPath Child
 Description: Custom WordPress theme for AeroPath Training
 Author: Sadia Rahim
 Template: astra
-Version: 1.0
+Version: 1.1
 */
 
-/* General styling */
-body {
-    font-family: Arial, sans-serif;
-    color: #243247;
-    background-color: #ffffff;
-}
-
-h1, h2, h3 {
-    color: #17365d;
-}
-
-a {
-    text-decoration: none;
+:root {
+    --navy: #102b49;
+    --navy-dark: #091d34;
+    --blue: #2476a6;
+    --gold: #f2b84b;
+    --text: #243247;
+    --muted: #5d6c7e;
+    --light: #f4f7fb;
+    --border: #e1e8ef;
 }
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 120px;
 }
 
-.aeropath-home {
-    font-family: Arial, sans-serif;
+body {
+    margin: 0;
+    background: #fff;
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.aeropath-home,
+.aeropath-nav {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.aeropath-home *,
+.aeropath-nav * {
+    box-sizing: border-box;
+}
+
+.aeropath-home h1,
+.aeropath-home h2,
+.aeropath-home h3 {
+    color: var(--navy);
+}
+
+.aeropath-home a,
+.aeropath-nav a {
+    text-decoration: none;
 }
 
 .aeropath-home .eyebrow {
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 2px;
+    margin: 0;
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2.2px;
     text-transform: uppercase;
-    color: #2877a8;
 }
 
-/* Hero section */
-.aeropath-home .hero {
+/* Navigation */
+
+.aeropath-nav {
+    position: sticky;
+    top: 32px;
+    z-index: 1000;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #e8edf2;
+    box-shadow: 0 2px 12px rgba(10, 35, 60, 0.04);
+}
+
+.aeropath-nav .nav-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
-    padding: 110px 8%;
-    background: linear-gradient(
-        120deg,
-        #102b49 0%,
-        #19476e 55%,
-        #2877a8 100%
-    );
-    color: white;
+    gap: 24px;
+    width: min(1200px, 90%);
+    min-height: 86px;
+    margin: 0 auto;
 }
 
-.aeropath-home .hero-content {
-    flex: 1;
-    max-width: 600px;
+.aeropath-nav .aeropath-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--navy);
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -1.2px;
+    white-space: nowrap;
 }
 
-.aeropath-home .hero .eyebrow {
-    color: #a8d9f0;
+.aeropath-nav .aeropath-logo span:not(.logo-mark) {
+    color: var(--blue);
 }
 
-.aeropath-home .hero h1 {
-    color: white;
-    font-size: 52px;
-    line-height: 1.15;
-    margin: 20px 0;
+.aeropath-nav .logo-mark {
+    margin-right: 9px;
+    color: var(--blue);
+    font-size: 30px;
+    line-height: 1;
 }
 
-.aeropath-home .hero-content > p:not(.eyebrow) {
-    font-size: 18px;
-    line-height: 1.7;
-    margin-bottom: 30px;
+.aeropath-nav .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+.aeropath-nav .nav-links a {
+    color: #263b53;
+    font-size: 20px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.aeropath-nav .nav-links a:hover,
+.aeropath-nav .nav-links a:focus-visible {
+    color: var(--blue);
+}
+
+.aeropath-nav .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 20px;
+    border-radius: 6px;
+    background: var(--navy);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+
+.aeropath-nav .nav-cta:hover {
+    background: var(--blue);
+    color: #fff;
+}
+
+/* Hero */
+
+.aeropath-home .hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 590px;
+    width: 100%;
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--navy-dark);
+}
+
+.aeropath-home .hero-image,
+.aeropath-home .hero-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .aeropath-home .hero-image {
-    flex: 1;
-    max-width: 480px;
+    z-index: -2;
 }
 
 .aeropath-home .hero-image img {
     display: block;
     width: 100%;
-    height: 330px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 12px;
+    object-position: center 48%;
 }
 
-/* Buttons and links */
+.aeropath-home .hero-overlay {
+    z-index: -1;
+    background: linear-gradient(
+        90deg,
+        rgba(5, 24, 45, 0.94) 0%,
+        rgba(9, 35, 60, 0.86) 36%,
+        rgba(11, 39, 64, 0.48) 68%,
+        rgba(11, 39, 64, 0.17) 100%
+    );
+}
+
+.aeropath-home .hero-content {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+    padding: 100px 0;
+    color: #fff;
+}
+
+.aeropath-home .hero .eyebrow {
+    color: #f6c66c;
+    letter-spacing: 2.5px;
+}
+
+.aeropath-home .hero h1 {
+    max-width: 750px;
+    margin: 22px 0;
+    color: #fff;
+    font-size: clamp(42px, 5.2vw, 70px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1.8px;
+}
+
+.aeropath-home .hero-description {
+    max-width: 560px;
+    margin: 0 0 32px;
+    color: #e9f0f7;
+    font-size: 17px;
+    line-height: 1.85;
+}
+
+.aeropath-home .hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+/* Buttons */
+
 .aeropath-home .primary-button,
 .aeropath-home .secondary-button {
-    display: inline-block;
-    padding: 14px 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 14px 25px;
     border-radius: 6px;
-    font-size: 15px;
-    font-weight: bold;
-    margin: 5px 10px 5px 0;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
     cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .aeropath-home .primary-button {
-    background: #f2b84b;
-    color: #102b4e;
-    border: 2px solid #f2b84b;
-}
-
-.aeropath-home .secondary-button {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
+    background: var(--gold);
+    border: 2px solid var(--gold);
+    color: var(--navy-dark);
 }
 
 .aeropath-home .primary-button:hover {
     background: #ffd27a;
     border-color: #ffd27a;
+    color: var(--navy-dark);
+    transform: translateY(-2px);
+}
+
+.aeropath-home .secondary-button {
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    color: #fff;
 }
 
 .aeropath-home .secondary-button:hover {
-    background: white;
-    color: #102b4e;
-}
-
-.aeropath-home a,
-.aeropath-home button {
-    transition: background-color 0.2s ease,
-                box-shadow 0.2s ease,
-                transform 0.2s ease;
-}
-
-.aeropath-home .hero a:hover {
+    background: #fff;
+    color: var(--navy);
     transform: translateY(-2px);
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Training programs */
-.aeropath-home .programs-section {
-    padding: 85px 8%;
-    background: #f5f8fc;
-}
+/* Section headings */
 
 .aeropath-home .section-heading {
-    max-width: 650px;
-    margin: 0 auto 40px;
+    max-width: 690px;
+    margin: 0 auto 48px;
     text-align: center;
 }
 
 .aeropath-home .section-heading h2,
 .aeropath-home .about-content h2 {
-    font-size: 34px;
-    margin: 12px 0;
+    margin: 14px 0 17px;
+    color: var(--navy);
+    font-size: clamp(29px, 3.5vw, 42px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
 }
 
-.aeropath-home .section-heading p,
-.aeropath-home .about-content p {
-    line-height: 1.7;
+.aeropath-home .section-heading > p:not(.eyebrow),
+.aeropath-home .about-content > p:not(.eyebrow) {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+/* Programs */
+
+.aeropath-home .programs-section {
+    padding: 105px 5%;
+    background: var(--light);
 }
 
 .aeropath-home .program-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    max-width: 1100px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    width: min(1240px, 100%);
     margin: 0 auto;
 }
 
 .aeropath-home .program-card {
-    background: white;
-    padding: 30px;
-    border: 1px solid #e1e8ef;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--border);
     border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(16, 43, 73, 0.08);
-    transition: box-shadow 0.2s ease,
-                transform 0.2s ease;
+    box-shadow: 0 6px 22px rgba(16, 43, 73, 0.07);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .aeropath-home .program-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 24px rgba(16, 43, 73, 0.14);
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(16, 43, 73, 0.14);
 }
 
 .aeropath-home .program-image {
@@ -186,159 +334,342 @@ html {
     width: 100%;
     height: 190px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 20px;
 }
 
-.aeropath-home .program-card h3 {
-    font-size: 23px;
-    margin: 15px 0;
-}
-
-.aeropath-home .program-card p {
-    line-height: 1.7;
-    color: #526174;
+.aeropath-home .program-card-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px 23px 27px;
 }
 
 .aeropath-home .program-category {
-    color: #2877a8;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
+    display: inline-block;
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.aeropath-home .program-card h3 {
+    margin: 13px 0 12px;
+    color: var(--navy);
+    font-size: 20px;
+    line-height: 1.35;
+}
+
+.aeropath-home .program-card p {
+    margin: 0 0 22px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
 }
 
 .aeropath-home .program-card a {
-    display: inline-block;
-    margin-top: 12px;
-    font-weight: bold;
+    margin-top: auto;
     color: #176b9a;
+    font-size: 14px;
+    font-weight: 800;
 }
 
-/* About section */
+.aeropath-home .program-card a:hover {
+    color: var(--navy);
+    text-decoration: underline;
+}
+
+/* About */
+
 .aeropath-home .about-section {
-    padding: 85px 8%;
-    text-align: center;
-    background: white;
+    padding: 105px 5%;
+    background: #fff;
 }
 
 .aeropath-home .about-content {
-    max-width: 720px;
-    margin: auto;
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-/* Inquiry form */
+.aeropath-home .about-content > p:not(.eyebrow) {
+    margin-bottom: 28px;
+}
+
+.aeropath-home .about-content .primary-button {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: #fff;
+}
+
+.aeropath-home .about-content .primary-button:hover {
+    background: var(--blue);
+    border-color: var(--blue);
+}
+
+/* Contact */
+
 .aeropath-home .contact-section {
-    padding: 85px 8%;
+    padding: 100px 5%;
     background: #edf4f9;
 }
 
 .aeropath-home .inquiry-form {
-    max-width: 650px;
-    margin: auto;
-    padding: 35px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    width: min(680px, 100%);
+    margin: 0 auto;
+    padding: 42px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 12px 35px rgba(16, 43, 73, 0.08);
 }
 
 .aeropath-home .inquiry-form label {
     display: block;
-    font-weight: bold;
-    margin: 18px 0 8px;
+    margin: 20px 0 9px;
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 700;
 }
 
 .aeropath-home .inquiry-form input,
 .aeropath-home .inquiry-form select,
 .aeropath-home .inquiry-form textarea {
+    display: block;
     width: 100%;
-    padding: 12px;
-    border: 1px solid #b8c5d1;
+    padding: 13px 15px;
+    background: #fff;
+    border: 1px solid #bac8d6;
     border-radius: 7px;
+    color: var(--text);
     font-family: inherit;
     font-size: 15px;
-    box-sizing: border-box;
+    line-height: 1.5;
 }
 
 .aeropath-home .inquiry-form select {
-    min-height: 48px;
-    padding: 10px 36px 10px 12px;
-    line-height: 1.4;
+    min-height: 50px;
+    padding-right: 36px;
+}
+
+.aeropath-home .inquiry-form textarea {
+    min-height: 120px;
+    resize: vertical;
 }
 
 .aeropath-home .inquiry-form input:focus,
 .aeropath-home .inquiry-form select:focus,
 .aeropath-home .inquiry-form textarea:focus {
-    outline: 2px solid #2877a8;
+    outline: 2px solid var(--blue);
     outline-offset: 2px;
+    border-color: var(--blue);
 }
 
 .aeropath-home .inquiry-form button {
-    margin-top: 24px;
+    width: 100%;
+    margin-top: 28px;
+    background: var(--navy);
+    border-color: var(--navy);
+    color: #fff;
+}
+
+.aeropath-home .inquiry-form button:hover {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
 }
 
 .aeropath-home #form-message {
-    margin-top: 15px;
-    font-weight: bold;
+    margin: 18px 0 0;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.6;
 }
 
-/* Mobile and tablet layouts */
+.aeropath-home .demo-disclaimer {
+    max-width: 680px;
+    margin: 22px auto 0;
+    color: #687b8e;
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+    .aeropath-home .program-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .aeropath-nav .nav-links {
+        gap: 18px;
+    }
+
+    .aeropath-nav .nav-container {
+        gap: 16px;
+    }
+}
+
+/* Mobile */
+
 @media (max-width: 768px) {
+    .aeropath-nav .nav-container {
+        width: 92%;
+        min-height: 76px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 0;
+    }
+
+    .aeropath-nav .aeropath-logo {
+        font-size: 23px;
+    }
+
+    .aeropath-nav .logo-mark {
+        font-size: 25px;
+    }
+
+    .aeropath-nav .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 10px 0 2px;
+    }
+
+    .aeropath-nav .nav-links a {
+        font-size: 12px;
+    }
+
+    .aeropath-nav .nav-cta {
+        padding: 11px 12px;
+        font-size: 11px;
+    }
+
     .aeropath-home .hero {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 30px;
-        padding: 75px 6%;
-    }
-
-    .aeropath-home .hero h1 {
-        font-size: 36px;
-    }
-
-    .aeropath-home .hero-image {
-        max-width: 100%;
+        min-height: 560px;
     }
 
     .aeropath-home .hero-image img {
-        height: 230px;
+        object-position: 60% center;
     }
 
-    .aeropath-home .program-grid {
-        grid-template-columns: 1fr;
+    .aeropath-home .hero-overlay {
+        background: linear-gradient(
+            90deg,
+            rgba(5, 24, 45, 0.94),
+            rgba(9, 35, 60, 0.76)
+        );
     }
 
-    .aeropath-home .program-card {
-        margin-bottom: 16px;
+    .aeropath-home .hero-content {
+        width: 88%;
+        padding: 85px 0;
     }
 
-    .aeropath-home .program-image {
-        height: 170px;
+    .aeropath-home .hero h1 {
+        font-size: clamp(37px, 8vw, 52px);
+        letter-spacing: -1px;
+    }
+
+    .aeropath-home .hero-description {
+        font-size: 15px;
+        line-height: 1.75;
     }
 
     .aeropath-home .programs-section,
     .aeropath-home .about-section,
     .aeropath-home .contact-section {
-        padding: 60px 6%;
+        padding: 75px 6%;
     }
 
-    .aeropath-home .section-heading h2,
-    .aeropath-home .about-content h2 {
-        font-size: 28px;
+    .aeropath-home .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .aeropath-home .program-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+    }
+
+    .aeropath-home .program-image {
+        height: 220px;
     }
 
     .aeropath-home .inquiry-form {
-        padding: 24px;
+        padding: 27px 22px;
     }
 }
 
-/* Accessibility */
+@media (max-width: 420px) {
+    .aeropath-nav .nav-cta {
+        padding: 10px;
+        font-size: 10px;
+    }
+
+    .aeropath-home .hero {
+        min-height: 530px;
+    }
+
+    .aeropath-home .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .aeropath-home .hero-actions a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .aeropath-home .program-image {
+        height: 185px;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
     }
 
-    .aeropath-home a,
-    .aeropath-home button,
-    .aeropath-home .program-card {
-        transition: none;
+    .aeropath-home *,
+    .aeropath-nav * {
+        transition: none !important;
     }
+}
+
+/* Astra homepage layout */
+
+body.home #page,
+body.home #content,
+body.home #content > .ast-container {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex: none !important;
+}
+
+body.home #content > .ast-container,
+body.home #primary,
+body.home #main,
+body.home .site-main,
+body.home .entry-content {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+}
+
+body.home #secondary,
+body.home #masthead {
+    display: none !important;
+}
+
+body.home .aeropath-nav,
+body.home .aeropath-home {
+    display: block;
+    width: 100% !important;
+    max-width: none !important;
 }
