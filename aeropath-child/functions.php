@@ -11,7 +11,7 @@ function aeropath_load_styles() {
         'aeropath-styles',
         get_stylesheet_uri(),
         array('astra-parent'),
-        '1.0'
+        filemtime(get_stylesheet_directory() . '/style.css')
     );
 }
 
