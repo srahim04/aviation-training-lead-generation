@@ -25,7 +25,7 @@ get_header();
 
 <main id="main" class="aeropath-home">
 
-    <!-- FULL-WIDTH HERO BANNER -->
+    <!-- HERO BANNER -->
     <section id="home" class="hero">
         <div class="hero-image">
             <img
