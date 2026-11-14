@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         formMessage.style.color = "#176b52";
 
-        // Track successful demo inquiry and campaign attribution.
+       
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
             event: "demo_inquiry_success",
@@ -58,7 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Automatically select the program when Request Information is clicked.
 document.addEventListener("DOMContentLoaded", function () {
     const programDropdown = document.getElementById("program");
     const programLinks = document.querySelectorAll("[data-program]");
