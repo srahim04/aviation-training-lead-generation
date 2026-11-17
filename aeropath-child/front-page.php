@@ -221,7 +221,7 @@ get_header();
         </form>
 
         <p class="demo-disclaimer">
-            Portfolio demonstration only. No inquiries are stored or emailed.
+            Demo form. No inquiries are emailed.
         </p>
     </section>
 
