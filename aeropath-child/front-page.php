@@ -24,7 +24,7 @@ get_header();
 
 <main id="main" class="aeropath-home">
 
-    <!-- FULL-WIDTH HERO BANNER -->
+    
     <section id="home" class="hero">
         <div class="hero-image">
             <img
@@ -60,7 +60,7 @@ get_header();
         </div>
     </section>
 
-    <!-- PROGRAMS -->
+    
     <section id="programs" class="programs-section">
         <div class="section-heading">
             <p class="eyebrow">EXPLORE YOUR POSSIBILITIES</p>
@@ -156,7 +156,7 @@ get_header();
         </div>
     </section>
 
-    <!-- ABOUT -->
+ 
     <section id="about" class="about-section">
         <div class="about-content">
             <p class="eyebrow">WHY AEROPATH?</p>
@@ -174,7 +174,6 @@ get_header();
         </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="contact-section">
         <div class="section-heading">
             <p class="eyebrow">TAKE THE NEXT STEP</p>
